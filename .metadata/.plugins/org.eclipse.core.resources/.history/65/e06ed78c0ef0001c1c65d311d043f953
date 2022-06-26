@@ -1,0 +1,33 @@
+package GUI;
+import java.awt.Font;
+
+import javax.swing.*;
+public class AddAddresse extends JFrame {
+	
+	public JFrame frame;
+	
+	AddAddresse(){
+		initialize();
+	}
+	
+	void initialize(){
+		int width = 150,height = 25, x_pos_tb=330,y_pos_tb=171,offset = 42;
+		int widthtf = 100,heighttf=25,x_pos_tf=185,y_pos_tf=169;
+		
+		frame = new JFrame();
+		frame.setBounds(50,0, 700, 850);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Banking System");
+		frame.getContentPane().setLayout(null);
+		
+		JLabel label = new JLabel("Add Addresse");
+		label.setFont(new Font("Tahoma", Font.BOLD, 20));
+		label.setBounds(260, 20,550, 41);
+		frame.getContentPane().add(label);
+		
+		JLabel lblLoginScreen = new JLabel("Enter Account Details");
+		lblLoginScreen.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblLoginScreen.setBounds(250,80, 200, 23);
+		frame.getContentPane().add(lblLoginScreen);
+	}
+}

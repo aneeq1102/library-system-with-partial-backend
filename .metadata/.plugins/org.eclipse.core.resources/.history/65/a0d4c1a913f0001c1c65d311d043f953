@@ -1,0 +1,36 @@
+package GUI;
+import java.awt.Font;
+
+import javax.swing.*;
+public class ReplaceCurrentAddresse extends JFrame{
+	
+	Integer[] options = {1,2,3,4,5,6,7,8,9,10};
+	
+	ReplaceCurrentAddresse(){
+		
+		setBounds(100, 100, 550, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Banking System");
+		getContentPane().setLayout(null);
+		
+		JLabel label = new JLabel("Replace current addresse With Saved Addresse");
+		label.setFont(new Font("Tahoma", Font.BOLD, 17));
+		label.setBounds(70, 11, 400, 41);
+		getContentPane().add(label);
+		
+		JLabel lblLoginScreen = new JLabel("Enter id of saved addresse you would like to use");
+		lblLoginScreen.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblLoginScreen.setBounds(130, 80, 280, 23);
+		getContentPane().add(lblLoginScreen);
+		
+		JLabel lblUsername = new JLabel("Addresse-id");
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblUsername.setBounds(55, 135, 64, 23);
+		getContentPane().add(lblUsername);
+		
+		JComboBox<Integer> comboBox = new JComboBox<>(options);
+		comboBox.setBounds(130,135,50,50);
+		getContentPane().add(comboBox);
+		
+	}
+}

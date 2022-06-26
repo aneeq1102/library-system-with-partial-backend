@@ -1,0 +1,82 @@
+package library;
+import java.time.LocalDate;
+import java.util.*;
+
+import javax.swing.DefaultListModel;
+
+import GUI.GUIForm;
+public class ShoppingBasket {
+	private ArrayList<Book> books = new ArrayList<Book>();
+	
+	ShoppingBasket() {
+		books.add(new Book("moby dick","12345"));
+		books.add(new Book("gullivers travels","1678"));	
+	}
+	
+	public void add(Book b) {
+		System.out.println("added to array"+b.title);
+		GUIForm.cart.generateArray();
+		books.add(b);
+	}
+	
+	public void printBooks() {
+		for(Book b:books) {
+			System.out.println(b.title);
+		}
+	}
+
+	public DefaultListModel<String> dbRetrieveBooks throws Exception ()
+	{
+
+		DefaultListModel<String> dbBooks=new DefaultListModel<String>();
+		int i;
+//		String type=null;
+
+		
+		String url = "jdbc:mysql://localhost:3306/libsys";
+		String uname = "root";
+		String pass = "aneeq1102";
+		String query = ;
+		
+		
+		Connection con = DriverManager.getConnection(url,uname,pass);
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(query);
+		
+		rs.next();
+		String acct_pass = rs.getString("acct_password");
+		System.out.println(acct_pass);
+		st.close();
+		con.close();
+		
+		return acct_pass;
+		
+	//	for(Book x:books) {
+	//		System.out.println(x.title);
+	//	}
+	//	for(i=0;i<books.size();i++)
+	//	{
+			
+//			if(getAccounts()[i].getClass().toString().equals("class Bank.SavingsAccount"))
+//			{
+//				type="Type: Savings Account";
+//			}
+//			
+//			else if(getAccounts()[i].getClass().toString().equals("class Bank.CurrentAccount"))
+//			{
+//				type="Type: Current Account";
+//			}
+//			
+//			else if(getAccounts()[i].getClass().toString().equals("class Bank.StudentAccount"))
+//			{
+//				type="Type: Student Account";
+//			}
+			
+		//	list.addElement(books.get(i).title.toString());
+			
+			
+	//	}
+		return dbBooks;
+	
+	}
+}

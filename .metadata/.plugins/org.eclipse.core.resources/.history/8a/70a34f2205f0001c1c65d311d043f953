@@ -1,0 +1,42 @@
+package GUI;
+
+import java.awt.Point;
+import java.time.LocalDate;
+
+import library.Addresse;
+import library.LibraryAccount;
+
+public class GUIForm {
+	public static Login login = new Login();
+	public static MemberRegistration newMemberRegistration = new MemberRegistration();
+	public static LibraryAccount account = new LibraryAccount(LocalDate.parse("2017-11-10"),LocalDate.parse("2023-11-10"),"123456","Jeff","Bezos",new Addresse("India","Karnataka","Bangalore","Yelahanka"));
+	public static AccountDashboard acctDash= new AccountDashboard();
+	public static OrdersList ordersList = new OrdersList();
+	public static LoginSecurity login_sec = new LoginSecurity();
+	public static MembershipRenewal membershipRenewal = new MembershipRenewal();
+	public static ChangeAddresse addresses = new Addresses();
+	public static Menu menu = new Menu();
+	public static BorrowBook borrowBook = new BorrowBook();
+	public static NewUser newUser = new NewUser();
+	public static OrderHistory history = new OrderHistory();
+	public static viewShoppingCart cart = new viewShoppingCart();
+	
+	public static void UpdateDisplay()
+	{
+		
+		if(ordersList.isVisible())
+		{
+			Point O=ordersList.getLocation();
+			ordersList.dispose();
+			ordersList = new OrdersList();
+			ordersList.setVisible(true);
+			ordersList.setLocation(O);;
+		}
+		
+		else {
+			ordersList = new OrdersList();
+		}
+		
+	}
+
+}

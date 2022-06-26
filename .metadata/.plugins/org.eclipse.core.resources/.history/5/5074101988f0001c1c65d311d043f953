@@ -1,0 +1,175 @@
+package GUI;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+public class AccountDashboard extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Create the frame.
+	 */
+	public AccountDashboard() {
+		setTitle("Account Dashboard");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setBounds(100, 100, 649, 600);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.activeCaption);
+		contentPane.setForeground(SystemColor.activeCaption);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		JLabel lblBankingSystem = new JLabel("Account Dashboard");
+		lblBankingSystem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBankingSystem.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblBankingSystem.setBounds(0, 69, 613, 59);
+		contentPane.add(lblBankingSystem);
+		
+	//temporary	FileIO.Read();
+		
+//		JButton btnAddAccount = new JButton("Add Account");
+//		btnAddAccount.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				if(!GUIForm.addaccount.isVisible())
+//				{
+//					GUIForm.addaccount.setVisible(true);
+//				}
+//				else
+//				{
+//					JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+//				}
+//				
+//			}
+//		});
+//		btnAddAccount.setBounds(217, 162, 194, 40);
+//		contentPane.add(btnAddAccount);
+		
+		JButton btnNewButton = new JButton("In transit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			if(!GUIForm.ordersList.isVisible())
+			{
+				GUIForm.ordersList.setVisible(true);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+			}
+				
+				
+			}
+			
+		});
+		btnNewButton.setBounds(217,170, 194, 32);
+		contentPane.add(btnNewButton);
+		
+		JButton btnDepositToAccount = new JButton("Order History");
+		btnDepositToAccount.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!GUIForm.history.isVisible())
+				{
+					GUIForm.history.setVisible(true);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+				}
+				
+			}
+		});
+		btnDepositToAccount.setBounds(217, 213, 194, 33);
+		contentPane.add(btnDepositToAccount);
+		
+		JButton btnWithdrawFromAccount = new JButton("Account Security");
+		btnWithdrawFromAccount.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!GUIForm.security.frame.isVisible())
+				{
+					GUIForm.security.frame.setVisible(true);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+				}
+				
+				
+			}
+			
+		});
+		btnWithdrawFromAccount.setBounds(217, 256, 194, 33);
+		contentPane.add(btnWithdrawFromAccount);
+		
+		JButton btnDisplayAccountList = new JButton("Manage Addresses");
+		btnDisplayAccountList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				if(!GUIForm.addresses.isVisible())
+				{
+					GUIForm.addresses.setVisible(true);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+				}
+				
+			}
+		});
+		btnDisplayAccountList.setBounds(217, 300, 194, 32);
+		contentPane.add(btnDisplayAccountList);
+		
+	
+		//
+		JButton membershipRenewal = new JButton("Renew membership");
+		membershipRenewal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			if(!GUIForm.membershipRenewal.isVisible())
+			{
+				GUIForm.membershipRenewal.setVisible(true);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(getComponent(0), "Already Opened", "Warning", 0);
+			}
+				
+				
+			}
+		
+		
+		
+		});
+		
+		//
+		membershipRenewal.setBounds(217, 343, 194, 36);
+		contentPane.add(membershipRenewal);
+		
+		JButton btnExit = new JButton("Return to home");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+	//			FileIO.Write();
+				dispose();
+			}
+		});
+		btnExit.setBounds(217, 386, 194, 33);
+		contentPane.add(btnExit);
+		
+
+		
+		JLabel lblNewLabel = new JLabel("Online portal");
+	//	lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("/img/1.png")));
+		lblNewLabel.setBounds(397, 16, 216, 213);
+		contentPane.add(lblNewLabel);
+		
+		//Image image=GenerateImage.toImage(true);  //this generates an image file
+	//	ImageIcon icon = new ImageIcon("1.png");
+	}
+}
